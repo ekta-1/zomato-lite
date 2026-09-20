@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
+/* Zomato Lite — a quiet, restrained palette.
+   Off-white paper, near-black ink, one warm accent used sparingly. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #faf9f7;      /* off-white background */
+  --ink: #1a1a1a;        /* near-black text */
+  --muted: #6b6b6b;      /* secondary text */
+  --line: #e7e4df;       /* hairline borders */
+  --card: #ffffff;       /* raised surfaces */
+  --accent: #b4532a;     /* one warm terracotta accent */
+  --radius: 10px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--paper);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+/* Single centred column, mobile-first, capped around 560px. */
+.page {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 56px 20px 96px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
